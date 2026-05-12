@@ -1,37 +1,61 @@
-# svm_classification
+# Iris Flower Classification using Support Vector Machine (SVM)
 
-# Insurance Charges Prediction using SVR
+## Overview
 
-## Project Description
+This project uses Support Vector Machine (SVM) to classify iris flowers into different species based on flower measurements.
 
-This project predicts medical insurance charges using Support Vector Regression (SVR).  
-The prediction is based on several features such as age, gender, BMI, number of children, smoking status, and region.
+The model predicts the flower species using:
+- Sepal Length
+- Sepal Width
+- Petal Length
+- Petal Width
 
-The main objective of this project is to build a machine learning regression model that can accurately predict insurance charges.
+This project demonstrates:
+- Data preprocessing
+- Feature Scaling
+- Train-Test Split
+- SVM Model Training
+- Model Evaluation
 
 ---
 
 # Dataset Information
 
-The dataset contains 1338 rows and 7 columns.
+The Iris dataset contains 150 rows and 5 columns.
 
-## Features Used
+## Features
 
 | Column Name | Description |
 |-------------|-------------|
-| age | Age of the person |
-| sex | Gender |
-| bmi | Body Mass Index |
-| children | Number of children |
-| smoker | Smoking status |
-| region | Residential region |
-| charges | Insurance charges |
+| SepalLengthCm | Length of sepal |
+| SepalWidthCm | Width of sepal |
+| PetalLengthCm | Length of petal |
+| PetalWidthCm | Width of petal |
+| Species | Flower species |
 
 ---
 
-# Machine Learning Algorithm
+# Target Classes
 
-- Support Vector Regression (SVR)
+The model predicts one of the following flower species:
+- Iris-setosa
+- Iris-versicolor
+- Iris-virginica
+
+---
+
+# Problem Type
+
+This is a:
+# Classification Problem
+
+because the target variable contains categories/classes.
+
+---
+
+# Machine Learning Algorithm Used
+
+- Support Vector Machine (SVM)
 
 ---
 
@@ -47,42 +71,38 @@ The dataset contains 1338 rows and 7 columns.
 
 # Project Workflow
 
-1. Load the dataset
-2. Understand the data
-3. Check null values
-4. Encode categorical data
-5. Feature scaling
-6. Separate input and output variables
-7. Split dataset into training and testing
-8. Train the SVR model
-9. Predict output values
-10. Evaluate the model
+1. Load Dataset
+2. Understand Dataset
+3. Check Null Values
+4. Remove Unnecessary Columns
+5. Separate Features and Target
+6. Train-Test Split
+7. Feature Scaling
+8. Train SVM Model
+9. Predict Output
+10. Evaluate Model
 
 ---
 
 # Data Preprocessing
 
-## Label Encoding
+## Removed Column
 
-Categorical columns encoded:
-- sex
-- smoker
-- region
+- Id column was removed because it is not useful for prediction.
 
 ---
 
 # Feature Scaling
 
-StandardScaler is used because SVR is sensitive to feature ranges.
+StandardScaler was used because SVM is sensitive to feature ranges.
 
 ---
 
-# SVR Hyperparameters Used
+# SVM Hyperparameters Used
 
 ```python
-SVR(
+SVC(
     kernel='rbf',
-    C=100,
-    gamma=0.1,
-    epsilon=0.1
+    C=1.0,
+    gamma='scale'
 )
