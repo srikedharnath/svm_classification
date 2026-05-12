@@ -11,7 +11,7 @@ st.title("Iris Flower Classification using SVM")
 st.write("Enter flower measurements below:")
 
 
-df = pd.read_csv(r"C:\Users\ADMIN\Downloads\archive (4)\Iris.csv")
+df = pd.read_csv("Iris.csv")
 
 
 df = df.drop("Id", axis=1)
